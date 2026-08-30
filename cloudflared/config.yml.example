@@ -1,0 +1,7 @@
+tunnel: floci
+credentials-file: ~/.cloudflared/<TUNNEL_ID>.json
+
+ingress:
+  - hostname: floci.example.com
+    service: http://localhost:4566
+  - service: http_status:404

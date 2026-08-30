@@ -1,0 +1,31 @@
+name = "floci-worker"
+main = "src/index.js"
+compatibility_date = "2026-08-29"
+workers_dev = true
+
+[vars]
+APP_NAME = "floci"
+ENVIRONMENT = "production"
+TARGET_URL = "http://localhost:4566"
+
+[[routes]]
+pattern = "floci.example.com/*"
+zone_name = "example.com"
+
+[env.staging]
+name = "floci-worker-staging"
+workers_dev = true
+
+[env.staging.vars]
+APP_NAME = "floci"
+ENVIRONMENT = "staging"
+TARGET_URL = "http://localhost:4566"
+
+[env.production]
+name = "floci-worker-production"
+workers_dev = false
+
+[env.production.vars]
+APP_NAME = "floci"
+ENVIRONMENT = "production"
+TARGET_URL = "http://localhost:4566"
